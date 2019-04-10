@@ -1,7 +1,7 @@
 import { CHANGE_SEARCHFIELD } from './constants'
 
 const initialState = {
-    searchField: ''
+    searchField: ' '
 }
 
 export const searchRobots = (state=initialState, action={}) => {
@@ -9,6 +9,6 @@ export const searchRobots = (state=initialState, action={}) => {
         case CHANGE_SEARCHFIELD:
             return {...state, searchField: action.payload}
         default:
-            return
+            return state
     }
 }

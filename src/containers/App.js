@@ -23,11 +23,14 @@ const mapDispatchToProps = (dispatch) => {
 class App extends React.Component {
     constructor(props) {
         super(props)
-
+        this.state = {
+            robots : []
+        }
     }
 
     componentDidMount() {
-        console.log(this.props.store)
+        console.log("State: ", this.state)
+        console.log("Props: ", this.props)
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response  => response.json())
         .then(users => this.setState({robots: users}))
